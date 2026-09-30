@@ -8,8 +8,6 @@ import org.bstats.charts.SimplePie;
 
 public class CodiHI extends JavaPlugin {
 
-    private static final int BSTATS_PLUGIN_ID = 29452;
-
     public enum ServerType {
         FOLIA("Folia"),
         PAPER("Paper");
@@ -53,10 +51,6 @@ public class CodiHI extends JavaPlugin {
 
         long elapsed = System.currentTimeMillis() - startTime;
         getLogger().info("Successfully Enabled. (took " + elapsed + "ms)");
-
-        // Initialize bStats metrics
-        Metrics metrics = new Metrics(this, BSTATS_PLUGIN_ID);
-        metrics.addCustomChart(new SimplePie("server_type", () -> serverType.toString()));
     }
 
     @Override
